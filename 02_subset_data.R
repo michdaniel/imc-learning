@@ -20,3 +20,13 @@ dim(spe_protein)
 
 # Verify
 table(spe_protein$patient_status_at_3months)
+
+#Add marker distribution plots per patient
+library(dittoSeq)
+
+#test with one marker
+dittoRidgePlot(spe_protein, var = "SOX10", group.by = "patient_id", assay = "exprs")
+
+#Plot all markers
+dittoRidgePlot(spe_protein, var = protein_markers, group.by = "patient_id", assay = "exprs")
+
